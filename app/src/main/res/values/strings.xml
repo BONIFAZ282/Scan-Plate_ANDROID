@@ -1,0 +1,39 @@
+<resources>
+
+    <string name="app_name">ScanPlate</string>
+
+    <string name="TextTitulo">SCAN PLATE</string>
+
+
+    <!-- LOGIN -->
+    <string name="TextBienvenida">Bienvenido</string>
+    <string name="TextInstrucciones">Por favor, ingrese su información</string>
+
+    <string name="EditUsuario">Usuario</string>
+    <string name="EditContrasenia">Contraseñia</string>
+
+    <string name="BtnSesion">Iniciar Sesión</string>
+    <string name="BtnRegistrar">Registrar</string>
+
+
+    <string name="BtnReconocer">Reconocer Placa</string>
+    <string name="BtnAcercaDe">Acerca De</string>
+    <string name="BtnSalir">Salir</string>
+
+    <string name="BtnLogin">Salir</string>
+
+    <string name="ReconocerTexto">Reconocer Texto</string>
+    <string name="ReconocerTXT">Texto Reconocido: </string>
+    <string name="TextoReconocidoEt"> -- </string>
+
+    <string name="BtnIngreso">Dar Ingreso</string>
+    <string name="BtnSalida">Dar Salida</string>
+
+    <string name="Menu_abrir_galeria">Abrir Galeria</string>
+    <string name="Menu_abrir_camara">Abrir Cámara</string>
+
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+</resources>

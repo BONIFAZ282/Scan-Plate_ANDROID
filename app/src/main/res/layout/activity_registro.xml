@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/scanner"
+    tools:context=".Activitys.RegistroActivity">
+
+
+    <!-- Fondo semi-transparente con color azul primario -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/my_primary"
+        android:alpha="0.7" />
+
+    <!-- Contenedor principal -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registro de Usuario"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="32sp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Tarjeta de registro -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="28dp"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp">
+
+                <!-- Contenido de la tarjeta -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="30dp">
+
+                    <!-- Campo de nombre completo -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre Completo"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtnombres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Campo de apellido paterno -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apellido Paterno"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtappaterno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Campo de apellido materno -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apellido Materno"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtapmaterno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Campo de documento -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Documento"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtdni"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Campo de celular -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Codigo"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtcodigo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Nuevos campos adicionales -->
+                    <!-- Campo adicional 1 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Categoria"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/txtcategoria"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Campo adicional 2 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Vehiculo"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/txtvehiculo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Campo adicional 3 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Placa"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtplaca"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Campo adicional 4 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contraseña"
+                        android:alpha="0.7"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/txtcontrasenia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:backgroundTint="@color/purple_500"
+                        android:padding="12dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!-- Botón de registro -->
+                    <Button
+                        android:id="@+id/btnRegistrar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Registrarse"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/purple_500"
+                        app:cornerRadius="32dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
