@@ -85,13 +85,15 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.putString("documento", usuarioResponse.getDocumento());
                                 editor.putString("codigo", usuarioResponse.getCodigo());
                                 editor.putString("nombres", usuarioResponse.getNombres());
+                                editor.putString("appaterno", usuarioResponse.getAppaterno());
+                                editor.putString("apmaterno", usuarioResponse.getApmaterno());
                                 editor.putString("contrasenia", usuarioResponse.getContrasenia());
                                 editor.putString("nombrePrivilegio", usuarioResponse.getNombrePrivilegio());
                                 editor.apply();
 
                                 // Redirigir según el privilegio
                                 if (nombrePrivilegio.equals("SEGURIDAD") || nombrePrivilegio.equals("ADMINISTRADOR")) {
-                                    Intent intent = new Intent(LoginActivity.this, PerfilActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                                     startActivity(intent);
                                 } else if (nombrePrivilegio.equals("NATURAL")) {
                                     Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);

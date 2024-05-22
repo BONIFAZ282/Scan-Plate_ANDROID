@@ -2,6 +2,7 @@ package com.bonifaz.scan_plate.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+
 public class UsuarioResponse {
 
     @SerializedName("DOCUMENTO")
@@ -10,6 +11,10 @@ public class UsuarioResponse {
     private String codigo;
     @SerializedName("NOMBRES")
     private String nombres;
+    @SerializedName("APPATERNO")
+    private String appaterno;
+    @SerializedName("APMATERNO")
+    private String apmaterno;
     @SerializedName("CONTRASENIA")
     private String contrasenia;
     @SerializedName("NOMBRE_PRIVILEGIO")
@@ -41,6 +46,22 @@ public class UsuarioResponse {
 
     public void setNombres(String nombres) {
         this.nombres = nombres;
+    }
+
+    public String getAppaterno() {
+        return appaterno;
+    }
+
+    public void setAppaterno(String appaterno) {
+        this.appaterno = appaterno;
+    }
+
+    public String getApmaterno() {
+        return apmaterno;
+    }
+
+    public void setApmaterno(String apmaterno) {
+        this.apmaterno = apmaterno;
     }
 
     public String getContrasenia() {

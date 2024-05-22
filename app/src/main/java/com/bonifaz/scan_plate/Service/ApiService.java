@@ -33,5 +33,4 @@ public interface ApiService {
 
     @GET("select/vehiculo")
     Call<List<TipoVehiculo>> getTiposVehiculo();
-
 }

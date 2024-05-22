@@ -1,16 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/scanner"
     tools:context=".Activitys.MenuActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MENU"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="246dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Fondo semitransparente -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/my_primary"
+        android:alpha="0.6" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".Activitys.MenuPrincipal">
+
+        <!-- Título de la aplicación -->
+        <TextView
+            android:text="@string/app_name"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"/>
+
+        <ImageView
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"/>
+
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="32dp">
+
+            <!-- Botón para reconocer -->
+            <Button
+                android:id="@+id/BtnReconocer"
+                android:text="Reconocer Placa"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/purple_500"/>
+
+            <!-- Botón para Acerca de -->
+            <Button
+                android:id="@+id/BtnPerfil"
+                android:text="Perfil"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/purple_500"/>
+
+            <!-- Botón para salir -->
+            <Button
+                android:id="@+id/BtnAcercaDe"
+                android:text="Acerca de"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/purple_500"/>
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>
