@@ -38,4 +38,10 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("placa/buscar")
     Call<List<PlacaResponse>> buscarPlaca(@Field("PLACA") String placa);
+
+    @FormUrlEncoded
+    @POST("placa/insertar")
+    Call<MensajeResponse> insertarPlacaEscaneada(
+            @Field("PLACA") String placa
+    );
 }

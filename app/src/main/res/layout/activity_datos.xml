@@ -220,93 +220,9 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="10dp">
-
-
-                <!-- Contenido de la tarjeta -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Hora y Fecha de Ingreso"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:textSize="16dp"
-                        android:layout_marginBottom="10dp" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="5dp">
-
-                        <!-- Campo de Fecha -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Fecha"
-                                android:alpha="0.7"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/txtFecha"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="text"
-                                android:text=""
-                                android:backgroundTint="@color/purple_500"
-                                android:padding="10dp" />
-                        </LinearLayout>
-
-                        <!-- Campo de Codigo -->
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Hora"
-                                android:alpha="0.7"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/txtHora"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:inputType="text"
-                                android:text=""
-                                android:backgroundTint="@color/purple_500"
-                                android:padding="10dp" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <Button
-                android:id="@+id/BtnIngreso"
+                android:id="@+id/buttonRegistrarPlaca"
                 android:text="@string/BtnIngreso"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
