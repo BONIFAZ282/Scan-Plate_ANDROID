@@ -73,7 +73,7 @@
                         app:cardElevation="4dp">
 
                         <EditText
-                            android:id="@+id/TextoReconocidoEt"
+                            android:id="@+id/editTextPlaca"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/TextoReconocidoEt"
