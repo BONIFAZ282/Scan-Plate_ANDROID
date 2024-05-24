@@ -230,6 +230,17 @@
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/purple_500"/>
 
+            <Button
+                android:id="@+id/btnRegistrarSalida"
+                android:text="Dar Salida"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/purple_500"/>
+
+
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </RelativeLayout>

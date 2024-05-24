@@ -16,7 +16,6 @@ public class PerfilActivity extends AppCompatActivity {
     private EditText textViewNombres;
     private EditText textViewNombrePrivilegio;
     private EditText textViewAppaterno;
-    private EditText textViewApmaterno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,6 @@ public class PerfilActivity extends AppCompatActivity {
         textViewCodigo = findViewById(R.id.textViewCodigo);
         textViewNombres = findViewById(R.id.textViewNombres);
         textViewAppaterno = findViewById(R.id.textViewAppaterno);
-        // textViewApmaterno = findViewById(R.id.textViewApmaterno);
 
         textViewNombrePrivilegio = findViewById(R.id.textViewNombrePrivilegio);
 

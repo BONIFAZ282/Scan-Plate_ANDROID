@@ -44,4 +44,10 @@ public interface ApiService {
     Call<MensajeResponse> insertarPlacaEscaneada(
             @Field("PLACA") String placa
     );
+
+    @FormUrlEncoded
+    @POST("placa/salida")
+    Call<MensajeResponse> salidaPlaca(
+            @Field("PLACA") String placa
+    );
 }

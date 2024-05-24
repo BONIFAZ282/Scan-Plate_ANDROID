@@ -25,7 +25,7 @@ public class DatosActivity extends AppCompatActivity {
 
     private TextView textViewDni, textViewCodigo, textViewApellidos, textViewNombres, textViewNomTipoVehiculo, textViewPlaca;
 
-    private Button buttonRegistrarPlaca;
+    private Button buttonRegistrarPlaca, btnRegistrarSalida;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,6 +40,7 @@ public class DatosActivity extends AppCompatActivity {
         textViewNomTipoVehiculo = findViewById(R.id.textViewNomTipoVehiculo);
         textViewPlaca = findViewById(R.id.textViewPlaca);
         buttonRegistrarPlaca = findViewById(R.id.buttonRegistrarPlaca);
+        btnRegistrarSalida = findViewById(R.id.btnRegistrarSalida);
 
 
         // Obtener los datos del intent
@@ -70,6 +71,13 @@ public class DatosActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     registrarPlaca(placa);
+                }
+            });
+
+            btnRegistrarSalida.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    registrarSalidaPlaca(placa); // Pasa la placa a registrar salida
                 }
             });
         }
@@ -104,4 +112,39 @@ public class DatosActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void registrarSalidaPlaca(String placa) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Config.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiService apiService = retrofit.create(ApiService.class);
+        Call<MensajeResponse> call = apiService.salidaPlaca(placa);
+
+        call.enqueue(new Callback<MensajeResponse>() {
+            @Override
+            public void onResponse(Call<MensajeResponse> call, Response<MensajeResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    Toast.makeText(DatosActivity.this, response.body().getText(), Toast.LENGTH_SHORT).show();
+                    // Redirigir a MainActivity
+                    Intent intent = new Intent(DatosActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    if (response.isSuccessful()) {
+                        Toast.makeText(DatosActivity.this, "Salida de Placa exitosamente", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(DatosActivity.this, "Error al darle salida a la placa", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(DatosActivity.this, "Error al registrar la salida", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MensajeResponse> call, Throwable t) {
+                Toast.makeText(DatosActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }
