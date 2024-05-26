@@ -156,10 +156,6 @@ public class RegistroActivity extends AppCompatActivity {
             return;
         }
 
-        if (!codigo.matches("[a-zA-Z0-9]{9}")) {
-            Toast.makeText(this, "El código debe tener exactamente 9 caracteres alfanuméricos", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         if (nombres.matches(".*\\d.*") || appaterno.matches(".*\\d.*") || apmaterno.matches(".*\\d.*")) {
             Toast.makeText(this, "Los nombres y apellidos no deben contener números", Toast.LENGTH_SHORT).show();

@@ -19,6 +19,10 @@ public class UsuarioResponse {
     private String contrasenia;
     @SerializedName("NOMBRE_PRIVILEGIO")
     private String nombrePrivilegio;
+    @SerializedName("PLACA")
+    private String placa;
+    @SerializedName("NOM_TIPO_VEHICULO")
+    private String vehiculo;
     @SerializedName("token")
     private String token;
 
@@ -80,6 +84,22 @@ public class UsuarioResponse {
         this.nombrePrivilegio = nombrePrivilegio;
     }
 
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public String getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(String vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
     public String getToken() {
         return token;
     }
@@ -87,4 +107,6 @@ public class UsuarioResponse {
     public void setToken(String token) {
         this.token = token;
     }
+
+
 }

@@ -87,6 +87,8 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.putString("nombres", usuarioResponse.getNombres());
                                 editor.putString("appaterno", usuarioResponse.getAppaterno());
                                 editor.putString("apmaterno", usuarioResponse.getApmaterno());
+                                editor.putString("placa", usuarioResponse.getPlaca());
+                                editor.putString("vehiculo", usuarioResponse.getVehiculo());
                                 editor.putString("contrasenia", usuarioResponse.getContrasenia());
                                 editor.putString("nombrePrivilegio", usuarioResponse.getNombrePrivilegio());
                                 editor.apply();
@@ -96,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                                     startActivity(intent);
                                 } else if (nombrePrivilegio.equals("NATURAL")) {
-                                    Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, Perfil2Activity.class);
                                     startActivity(intent);
                                 }
                             } else {
