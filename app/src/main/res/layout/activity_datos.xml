@@ -1,246 +1,264 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/scanner"
+    tools:context=".Activitys.DatosActivity">
 
-  <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="Scan Plate" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/my_primary"
+        android:alpha="0.5" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/scanner"
-        tools:context=".Activitys.DatosActivity">
+        android:padding="16dp">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/purple_500"
-            android:elevation="4dp"
-            android:minHeight="?attr/actionBarSize"
-            app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:title="Scan Plate" />
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="8dp">
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/my_primary"
-            android:alpha="0.5" />
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <androidx.cardview.widget.CardView
+            <!-- Contenido de la tarjeta -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
-                android:layout_marginTop="80dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="10dp">
+                android:orientation="vertical"
+                android:padding="30dp">
 
-                <!-- Contenido de la tarjeta -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Datos del Conductor"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="30dp">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Datos del Conductor"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:textSize="16dp"
-                        android:layout_marginBottom="10dp" />
-
-
+                    <!-- Campo de DNI -->
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="10dp">
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
 
-                        <!-- Campo de DNI -->
-                        <LinearLayout
-                            android:layout_width="0dp"
+                        <TextView
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:text="DNI"
+                            android:alpha="0.7"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="DNI"
-                                android:alpha="0.7"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/textViewDni"
-                                android:layout_width="match_parent"
-                                android:text=""
-                                android:layout_height="wrap_content"
-                                android:inputType="text"
-                                android:backgroundTint="@color/purple_500"
-                                android:padding="10dp" />
-                        </LinearLayout>
-
-                        <!-- Campo de Codigo -->
-                        <LinearLayout
-                            android:layout_width="0dp"
+                        <TextView
+                            android:id="@+id/textViewDni"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Codigo"
-                                android:alpha="0.7"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/textViewCodigo"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text=""
-                                android:inputType="text"
-                                android:backgroundTint="@color/purple_500"
-                                android:padding="10dp" />
-                        </LinearLayout>
+                            android:text=""
+                            android:textSize="16sp"
+                            android:padding="10dp"
+                            android:background="@drawable/textview_background"
+                            android:textColor="@color/black"/>
                     </LinearLayout>
 
-
-                    <!-- Campo de Apellidos -->
-                    <TextView
-                        android:layout_width="match_parent"
+                    <!-- Campo de Codigo -->
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Apellidos"
-                        android:alpha="0.7"
-                        android:textStyle="bold" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="8dp">
 
-                    <EditText
-                        android:id="@+id/textViewApellidos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:inputType="text"
-                        android:backgroundTint="@color/purple_500"
-                        android:padding="10dp"
-                        android:layout_marginBottom="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Código"
+                            android:alpha="0.7"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"/>
 
-                    <!-- Campo de Apellidos -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Nombres"
-                        android:alpha="0.7"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/textViewNombres"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:text=""
-                        android:backgroundTint="@color/purple_500"
-                        android:padding="10dp"
-                        android:layout_marginBottom="10dp"/>
-
+                        <TextView
+                            android:id="@+id/textViewCodigo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="16sp"
+                            android:padding="10dp"
+                            android:background="@drawable/textview_background"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/white"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginBottom="10dp">
-
-                <!-- Contenido de la tarjeta -->
-                <LinearLayout
+                <!-- Campo de Apellidos -->
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="30dp">
+                    android:text="Apellidos"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Datos del Conductor"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:textSize="16dp"
-                        android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:id="@+id/textViewApellidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:background="@drawable/textview_background"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"/>
 
+                <!-- Campo de Nombres -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nombres"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
-                    <!-- Campo de Apellidos -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Tipo de Vehiculo"
-                        android:alpha="0.7"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textViewNombres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:background="@drawable/textview_background"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"/>
 
-                    <EditText
-                        android:id="@+id/textViewNomTipoVehiculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:text=""
-                        android:backgroundTint="@color/purple_500"
-                        android:padding="10dp"
-                        android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-                    <!-- Campo de Apellidos -->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Placa"
-                        android:alpha="0.7"
-                        android:textStyle="bold" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="8dp">
 
-                    <EditText
-                        android:id="@+id/textViewPlaca"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:text=""
-                        android:backgroundTint="@color/purple_500"
-                        android:padding="10dp"
-                        android:layout_marginBottom="10dp"/>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <Button
-                android:id="@+id/buttonRegistrarPlaca"
-                android:text="@string/BtnIngreso"
-                android:layout_width="200dp"
+            <!-- Contenido de la tarjeta -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/purple_500"/>
+                android:orientation="vertical"
+                android:padding="30dp">
 
-            <Button
-                android:id="@+id/btnRegistrarSalida"
-                android:text="Dar Salida"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/purple_500"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Datos del Conductor"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"/>
 
+                <!-- Campo de Tipo de Vehiculo -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de Vehiculo"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
+                <TextView
+                    android:id="@+id/textViewNomTipoVehiculo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:background="@drawable/textview_background"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"/>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+                <!-- Campo de Placa -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Placa"
+                    android:alpha="0.7"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/textViewPlaca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="16sp"
+                    android:padding="10dp"
+                    android:background="@drawable/textview_background"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonRegistrarPlaca"
+            android:text="@string/BtnIngreso"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btnRegistrarSalida"
+            android:text="Dar Salida"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white"
+            android:textSize="16sp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

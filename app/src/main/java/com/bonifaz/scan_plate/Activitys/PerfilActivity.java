@@ -11,11 +11,11 @@ import com.bonifaz.scan_plate.R;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    private EditText textViewDocumento;
-    private EditText textViewCodigo;
-    private EditText textViewNombres;
-    private EditText textViewNombrePrivilegio;
-    private EditText textViewAppaterno;
+    private TextView textViewDocumento;
+    private TextView textViewCodigo;
+    private TextView textViewNombres;
+    private TextView textViewNombrePrivilegio;
+    private TextView textViewAppaterno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -125,7 +125,6 @@ public class DatosActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<MensajeResponse> call, Response<MensajeResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    Toast.makeText(DatosActivity.this, response.body().getText(), Toast.LENGTH_SHORT).show();
                     // Redirigir a MainActivity
                     Intent intent = new Intent(DatosActivity.this, MainActivity.class);
                     startActivity(intent);

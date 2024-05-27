@@ -82,13 +82,13 @@
                             android:alpha="0.7"
                             android:textStyle="bold" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/textViewDocumento"
                             android:layout_width="match_parent"
                             android:text=""
                             android:layout_height="wrap_content"
                             android:inputType="text"
-                            android:backgroundTint="@color/purple_500"
+                            android:background="@drawable/textview_background"
                             android:padding="10dp" />
                     </LinearLayout>
 
@@ -106,13 +106,13 @@
                             android:alpha="0.7"
                             android:textStyle="bold" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/textViewCodigo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text=""
                             android:inputType="text"
-                            android:backgroundTint="@color/purple_500"
+                            android:background="@drawable/textview_background"
                             android:padding="10dp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -126,13 +126,13 @@
                     android:alpha="0.7"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/textViewAppaterno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:inputType="text"
-                    android:backgroundTint="@color/purple_500"
+                    android:background="@drawable/textview_background"
                     android:padding="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -144,13 +144,13 @@
                     android:alpha="0.7"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/textViewNombres"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:text=""
-                    android:backgroundTint="@color/purple_500"
+                    android:background="@drawable/textview_background"
                     android:padding="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -174,14 +174,14 @@
                 android:padding="16dp">
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Vehiculo"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textSize="16dp"
-                android:layout_marginBottom="20dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vehiculo"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="20dp" />
 
                 <!-- Campo de Apellidos -->
                 <TextView
@@ -191,13 +191,13 @@
                     android:alpha="0.7"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/textViewNomTipoVehiculo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:inputType="text"
-                    android:backgroundTint="@color/purple_500"
+                    android:background="@drawable/textview_background"
                     android:padding="10dp"
                     android:layout_marginBottom="10dp"/>
 
@@ -209,23 +209,19 @@
                     android:alpha="0.7"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/textViewPlaca"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:text=""
-                    android:backgroundTint="@color/purple_500"
+                    android:background="@drawable/textview_background"
                     android:padding="10dp"
                     android:layout_marginBottom="10dp"/>
 
-
             </LinearLayout>
 
-
         </androidx.cardview.widget.CardView>
-
-
 
     </LinearLayout>
 
