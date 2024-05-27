@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -76,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
         editTextPlaca = findViewById(R.id.editTextPlaca);
         VerDatos = findViewById(R.id.VerDatos);
 
+        // Establecer el filtro para limitar la longitud del texto a 7 caracteres
+        InputFilter[] filters = new InputFilter[]{new InputFilter.LengthFilter(7)};
+        editTextPlaca.setFilters(filters);
+
         // Configurar Retrofit
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Config.BASE_URL)
@@ -87,7 +92,13 @@ public class MainActivity extends AppCompatActivity {
         VerDatos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buscarPlaca();
+                String placa = editTextPlaca.getText().toString().trim();
+                if (placa.length() == 7) {
+                    // Realizar la acción correspondiente
+                    buscarPlaca();
+                } else {
+                    Toast.makeText(MainActivity.this, "Ingrese una placa válida de 7 caracteres", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

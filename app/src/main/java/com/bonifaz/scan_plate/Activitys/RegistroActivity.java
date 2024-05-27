@@ -3,6 +3,9 @@ package com.bonifaz.scan_plate.Activitys;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,6 +60,34 @@ public class RegistroActivity extends AppCompatActivity {
         txtcategoria = findViewById(R.id.txtcategoria);
         txtvehiculo = findViewById(R.id.txtvehiculo);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+
+
+        InputFilter[] filtersdni = new InputFilter[]{new InputFilter.LengthFilter(8)};
+        txtdni.setFilters(filtersdni);
+        InputFilter[] filterscod = new InputFilter[]{new InputFilter.LengthFilter(9)};
+        txtcodigo.setFilters(filterscod);
+        InputFilter[] filtersplaca = new InputFilter[]{new InputFilter.LengthFilter(7)};
+        txtplaca.setFilters(filtersplaca);
+
+        // Convertir texto de txtPlaca a mayúsculas
+        txtplaca.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                txtplaca.removeTextChangedListener(this);
+                String text = s.toString().toUpperCase();
+                txtplaca.setText(text);
+                txtplaca.setSelection(text.length());
+                txtplaca.addTextChangedListener(this);
+            }
+        });
 
         categoriaAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
         categoriaAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
