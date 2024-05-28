@@ -206,6 +206,8 @@ public class MainActivity extends AppCompatActivity {
         galeriaARL.launch(intent);
     }
 
+
+
     private void AbrirCamara(){
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.TITLE, "Titulo");
@@ -216,8 +218,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         camaraARL.launch(intent);
-
     }
+
 
     private ActivityResultLauncher<Intent> galeriaARL = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),

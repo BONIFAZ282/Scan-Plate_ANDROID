@@ -65,10 +65,19 @@
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/purple_500"/>
 
-            <!-- Botón para salir -->
+            <!-- Botón acerca de -->
             <Button
                 android:id="@+id/BtnAcercaDe"
                 android:text="Acerca de"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/purple_500"/>
+
+            <!-- Botón para Salir -->
+            <Button
+                android:id="@+id/BtnSalir"
+                android:text="Salir"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
