@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "353851020444",
+    "project_id": "scan-plate",
+    "storage_bucket": "scan-plate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353851020444:android:ea4edde6b912dba4954959",
+        "android_client_info": {
+          "package_name": "com.bonifaz.scan_plate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6IN65-sdqf1f2OObDlWAU3eUIhjACMe8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

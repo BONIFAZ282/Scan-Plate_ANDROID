@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                                     startActivity(intent);
                                 } else if (nombrePrivilegio.equals("NATURAL")) {
-                                    Intent intent = new Intent(LoginActivity.this, Perfil2Activity.class);
+                                    Intent intent = new Intent(LoginActivity.this, Menu2Activity.class);
                                     startActivity(intent);
                                 }
                             } else {
