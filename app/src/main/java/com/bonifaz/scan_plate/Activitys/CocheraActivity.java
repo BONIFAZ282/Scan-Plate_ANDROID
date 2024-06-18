@@ -1,5 +1,6 @@
 package com.bonifaz.scan_plate.Activitys;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import com.bonifaz.scan_plate.Models.CocheraResponse;
 import com.bonifaz.scan_plate.Models.MensajeResponse;
 import com.bonifaz.scan_plate.R;
 import com.bonifaz.scan_plate.Service.ApiService;
+import com.bonifaz.scan_plate.Service.NotificacionService;
 import com.bonifaz.scan_plate.Utils.Config;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.RemoteMessage;
@@ -84,9 +86,19 @@ public class CocheraActivity extends AppCompatActivity {
 
                         tvInfoEspacio.setText(mensaje);
                         tvInfoEspacio.setBackgroundColor(colorFondo);
+
+                        // Mostrar notificación local
+                        mostrarNotificacion(mensaje);
                     }
                 }
             }
+
+            private void mostrarNotificacion(String mensaje) {
+                Intent intent = new Intent(CocheraActivity.this, NotificacionService.class);
+                intent.putExtra("mensaje", mensaje);
+                startService(intent);
+            }
+
 
             @Override
             public void onFailure(Call<List<CocheraResponse>> call, Throwable t) {
