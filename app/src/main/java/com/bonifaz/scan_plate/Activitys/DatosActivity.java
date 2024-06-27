@@ -1,10 +1,11 @@
 package com.bonifaz.scan_plate.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar; // Importar la Toolbar correcta
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,14 +25,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class DatosActivity extends AppCompatActivity {
 
     private TextView textViewDni, textViewCodigo, textViewApellidos, textViewNombres, textViewNomTipoVehiculo, textViewPlaca;
-
     private Button buttonRegistrarPlaca, btnRegistrarSalida;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         textViewDni = findViewById(R.id.textViewDni);
         textViewCodigo = findViewById(R.id.textViewCodigo);
@@ -41,7 +47,6 @@ public class DatosActivity extends AppCompatActivity {
         textViewPlaca = findViewById(R.id.textViewPlaca);
         buttonRegistrarPlaca = findViewById(R.id.buttonRegistrarPlaca);
         btnRegistrarSalida = findViewById(R.id.btnRegistrarSalida);
-
 
         // Obtener los datos del intent
         Bundle extras = getIntent().getExtras();
@@ -65,7 +70,6 @@ public class DatosActivity extends AppCompatActivity {
             textViewNomTipoVehiculo.setText(nomTipoVehiculo);
             textViewPlaca.setText(placa);
 
-
             // Configurar el botón para registrar la placa
             buttonRegistrarPlaca.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -83,6 +87,14 @@ public class DatosActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Cierra la actividad actual y regresa a la anterior
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void registrarPlaca(String placa) {
         Retrofit retrofit = new Retrofit.Builder()

@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/scanner">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="Scan Plate"
+        app:navigationIcon="@drawable/flecha" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,7 +32,7 @@
         android:gravity="center"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="35dp">
 
         <!-- Imagen superior -->
         <ImageView
@@ -30,7 +41,7 @@
             android:layout_height="200dp"
             android:src="@drawable/estacionamiento"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:contentDescription="@string/app_name" />
         <TextView
             android:id="@+id/tvTitulo"
@@ -38,10 +49,10 @@
             android:layout_height="wrap_content"
             android:text="ESTACIONAMIENTO"
             android:textSize="28sp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-condensed"
-        android:padding="12dp" />
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="10dp" />
 
         <!-- Reloj -->
         <TextClock
@@ -53,7 +64,7 @@
             android:fontFamily="sans-serif-condensed"
             android:padding="8dp"
             android:format24Hour="HH:mm:ss"
-            android:layout_marginTop="8dp" />
+             />
     </LinearLayout>
 
     <!-- Contenedor de información -->
@@ -63,16 +74,16 @@
         android:orientation="vertical"
         android:layout_marginTop="350dp"
         android:padding="16dp"
-    android:background="@android:color/white"
-    android:elevation="4dp">
+        android:background="@android:color/white"
+        android:elevation="4dp">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-    android:padding="16dp"
-    android:background="@android:color/white"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+        android:padding="16dp"
+        android:background="@android:color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -1,11 +1,13 @@
 package com.bonifaz.scan_plate.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar; // Importar la Toolbar correcta
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,6 +23,13 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         BtnReconocer = findViewById(R.id.BtnReconocer);
         BtnPerfil = findViewById(R.id.BtnPerfil);
@@ -57,6 +66,16 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Cierra la actividad actual y regresa a la anterior
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void MostrarDialog(){
         Button BtnEntendido;

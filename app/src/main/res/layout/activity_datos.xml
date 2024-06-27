@@ -16,7 +16,8 @@
         android:elevation="4dp"
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:title="Scan Plate" />
+        app:title="Scan Plate"
+        app:navigationIcon="@drawable/flecha" />
 
     <RelativeLayout
         android:layout_width="match_parent"

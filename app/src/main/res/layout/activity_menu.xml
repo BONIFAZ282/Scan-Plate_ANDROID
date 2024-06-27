@@ -8,6 +8,16 @@
     android:background="@drawable/scanner"
     tools:context=".Activitys.MenuActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="Scan Plate"
+        app:navigationIcon="@drawable/flecha" />
 
     <!-- Fondo semitransparente -->
     <RelativeLayout

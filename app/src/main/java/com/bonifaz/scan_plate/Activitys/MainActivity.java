@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar; // Importar la Toolbar correcta
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -26,7 +27,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import androidx.appcompat.widget.Toolbar;
 
 import com.bonifaz.scan_plate.Models.PlacaResponse;
 import com.bonifaz.scan_plate.R;
@@ -108,6 +108,10 @@ public class MainActivity extends AppCompatActivity {
         // Vincular la barra de herramientas con la actividad
         Toolbar toolbar = findViewById(R.id.toolbar_custom);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Espero Porfavor");
@@ -270,7 +274,13 @@ public class MainActivity extends AppCompatActivity {
             AbrirCamara();
             // Toast.makeText(this, "Abrir Cámara", Toast.LENGTH_SHORT).show();
         }
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Cierra la actividad actual y regresa a la anterior
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
+
+
     }
 }

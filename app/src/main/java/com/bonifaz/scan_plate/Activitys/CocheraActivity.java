@@ -2,7 +2,9 @@ package com.bonifaz.scan_plate.Activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar; // Importar la Toolbar correcta
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -39,6 +41,13 @@ public class CocheraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cochera);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         tvNombreEstacionamiento = findViewById(R.id.tvTitulo);
         tvEspaciosTotales = findViewById(R.id.tvEspaciosTotales);
         tvEspaciosDisponibles = findViewById(R.id.tvEspaciosDisponibles);
@@ -47,6 +56,16 @@ public class CocheraActivity extends AppCompatActivity {
         obtenerDatosCochera();
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Cierra la actividad actual y regresa a la anterior
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     private void obtenerDatosCochera() {
         Retrofit retrofit = new Retrofit.Builder()

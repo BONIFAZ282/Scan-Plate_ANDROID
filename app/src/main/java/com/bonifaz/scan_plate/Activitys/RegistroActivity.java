@@ -1,11 +1,14 @@
 package com.bonifaz.scan_plate.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar; // Importar la Toolbar correcta
 
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,6 +52,13 @@ public class RegistroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         txtnombres = findViewById(R.id.txtnombres);
         txtappaterno = findViewById(R.id.txtappaterno);
@@ -101,6 +111,15 @@ public class RegistroActivity extends AppCompatActivity {
         llenarTiposVehiculo();
 
         btnRegistrar.setOnClickListener(v -> registrarUsuario());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Cierra la actividad actual y regresa a la anterior
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void llenarCategorias() {

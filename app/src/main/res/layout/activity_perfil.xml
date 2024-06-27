@@ -4,6 +4,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/scanner">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="Scan Plate"
+        app:navigationIcon="@drawable/flecha" />
+
     <!-- Fondo semi-transparente con color azul primario -->
     <RelativeLayout
         android:layout_width="match_parent"
