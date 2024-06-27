@@ -2,6 +2,7 @@ package com.bonifaz.scan_plate.Service;
 
 import com.bonifaz.scan_plate.Models.Categoria;
 import com.bonifaz.scan_plate.Models.CocheraResponse;
+import com.bonifaz.scan_plate.Models.EstadoResponse;
 import com.bonifaz.scan_plate.Models.MensajeResponse;
 import com.bonifaz.scan_plate.Models.PlacaResponse;
 import com.bonifaz.scan_plate.Models.TipoVehiculo;
@@ -54,5 +55,10 @@ public interface ApiService {
 
     @GET("cochera")
     Call<List<CocheraResponse>> obtenerDatosCochera();
+
+    @FormUrlEncoded
+    @POST("placa/estado")
+    Call<EstadoResponse> obtenerEstadoPlaca(@Field("PLACA") String placa);
+
 
 }
